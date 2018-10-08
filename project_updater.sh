@@ -21,7 +21,7 @@ Current working dir: $SCRIPTPATH \r\n \r\n
                             |_|                                             |___|
 
 Source: https://github.com/c2theg/path_checker/tree/master
-Version:  0.0.2                             \r\n
+Version:  0.0.3                             \r\n
 Last Updated:  10/8/2018
 \r\n \r\n"
 #sudo -E apt-get update
@@ -40,13 +40,21 @@ then
     echo "Deleting old files \r\n"	
     if [ -s "project_updater.sh" ]
     then
-        rm get_metrics.py
-        rm listener_mqtt.py
         rm project_updater.sh
-        rm register.py
         rm setup.sh
+        rm get_metrics.py
+        rm remote_listener.py
+        rm register.py
         rm watchdog.sh
         rm watchdog.py
+        #---------------
+        rm /root/path_checker/project_updater.sh
+        rm /root/path_checker/setup.sh
+        rm /root/path_checker/get_metrics.py
+        rm /root/path_checker/remote_listener.py
+        rm /root/path_checker/register.py
+        rm /root/path_checker/watchdog.sh
+        rm /root/path_checker/watchdog.py
     fi
 
     echo "Downloading latest versions... \r\n\r\n"   
@@ -83,8 +91,8 @@ then
     mv get_metrics.py /root/path_checker/get_metrics.py
     mv register.py /root/path_checker/register.py
     mv remote_listener.py /root/path_checker/remote_listener.py
-    mv remote_listener.py /root/path_checker/watchdog.sh
-    mv remote_listener.py /root/path_checker/watchdog.py
+    mv watchdog.sh /root/path_checker/watchdog.sh
+    mv watchdog.py /root/path_checker/watchdog.py
     wait
 
     #--------------------------------------------------------------
