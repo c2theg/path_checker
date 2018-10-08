@@ -39,61 +39,61 @@ echo "Checking Internet status...\r\n\r\n"
 ping -q -c3 github.com > /dev/null
 if [ $? -eq 0 ]
 then
-	echo "Connected!!! \r\n \r\n"
-	echo "Deleting old files \r\n"	
-	if [ -s "project_updater.sh" ]
-	then
-		rm get_metrics.py
- 		rm listener_mqtt.py
- 		rm project_updater.sh
-		rm register.py
-		rm setup.sh
+    echo "Connected!!! \r\n \r\n"
+    echo "Deleting old files \r\n"	
+    if [ -s "project_updater.sh" ]
+    then
+        rm get_metrics.py
+        rm listener_mqtt.py
+        rm project_updater.sh
+        rm register.py
+        rm setup.sh
         rm watchdog.sh
         rm watchdog.py
-	fi
+    fi
 
-	echo "Downloading latest versions... \r\n\r\n"   
-	sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/project_updater.sh
-	sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/setup.sh
+    echo "Downloading latest versions... \r\n\r\n"   
+    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/project_updater.sh
+    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/setup.sh
     sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/get_metrics.py
-	sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/register.py
-	sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/remote_listener.py
+    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/register.py
+    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/remote_listener.py
     sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.sh
     sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.py
 
-	if [ ! -s "config.json" ]
-	then
-		sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/config.json
-	fi
+    if [ ! -s "config.json" ]
+    then
+        sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/config.json
+    fi
 
-	#-----------------------------------------------
-	chmod u+x project_updater.sh
-	chmod u+x setup.sh
-	chmod u+x get_metrics.py
-	chmod u+x register.py
-	chmod u+x remote_listener.py
+    #-----------------------------------------------
+    chmod u+x project_updater.sh
+    chmod u+x setup.sh
+    chmod u+x get_metrics.py
+    chmod u+x register.py
+    chmod u+x remote_listener.py
     chmod u+x watchdog.sh
     chmod u+x watchdog.py
-	wait
+    wait
     
-	if [ ! -d "/root/path_checker/" ]
-	then
-		mkdir /root/path_checker/
-	fi
+    if [ ! -d "/root/path_checker/" ]
+    then
+        mkdir /root/path_checker/
+    fi
     
-	mv project_updater.sh /root/path_checker/project_updater.sh
-	mv setup.sh /root/path_checker/setup.sh
-	mv get_metrics.py /root/path_checker/get_metrics.py
-	mv register.py /root/path_checker/register.py
-	mv remote_listener.py /root/path_checker/remote_listener.py
+    mv project_updater.sh /root/path_checker/project_updater.sh
+    mv setup.sh /root/path_checker/setup.sh
+    mv get_metrics.py /root/path_checker/get_metrics.py
+    mv register.py /root/path_checker/register.py
+    mv remote_listener.py /root/path_checker/remote_listener.py
     mv remote_listener.py /root/path_checker/watchdog.sh
     mv remote_listener.py /root/path_checker/watchdog.py
-	wait
+    wait
 
     #--------------------------------------------------------------
-	#sh /root/update_ubuntu14.04.sh
+    #sh /root/update_ubuntu14.04.sh
 else
-	echo "Not connected to the Internet. Fix that first and try again \r\n \r\n"
+    echo "Not connected to the Internet. Fix that first and try again \r\n \r\n"
 fi
 
 
