@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 #
-#
-#
-#
 clear
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
@@ -24,15 +21,15 @@ Current working dir: $SCRIPTPATH \r\n \r\n
                             |_|                                             |___|
 
 Source: https://github.com/c2theg/path_checker/tree/master
-Version:  0.0.1                             \r\n
+Version:  0.0.2                             \r\n
 Last Updated:  10/8/2018
 \r\n \r\n"
-sudo -E apt-get update
+#sudo -E apt-get update
 wait
-sudo -E apt-get upgrade -y
+#sudo -E apt-get upgrade -y
 #wait
 #echo "Freeing up space"
-sudo apt-get autoremove -y
+#sudo apt-get autoremove -y
 wait
 #--------------------------------------------------------------------------------------------
 echo "Checking Internet status...\r\n\r\n"
@@ -53,17 +50,17 @@ then
     fi
 
     echo "Downloading latest versions... \r\n\r\n"   
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/project_updater.sh
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/setup.sh
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/get_metrics.py
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/register.py
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/remote_listener.py
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.sh
-    sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.py
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/project_updater.sh
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/setup.sh
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/get_metrics.py
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/register.py
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/remote_listener.py
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.sh
+    sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/watchdog.py
 
     if [ ! -s "config.json" ]
     then
-        sudo wget -O https://raw.githubusercontent.com/c2theg/path_checker/master/config.json
+        sudo wget https://raw.githubusercontent.com/c2theg/path_checker/master/config.json
     fi
 
     #-----------------------------------------------
