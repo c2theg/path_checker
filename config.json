@@ -1,1 +1,58 @@
-temp init
+{
+    "identity": {
+        "network_type":     "isp",
+        "name":             "Latency_Tester1_NorthEast_US",
+        "asn":              1234,
+        "location_type":    "residential",
+        "latitude":         "00.000",
+        "longitude":        "00.000",
+        "connection_speed": "100mbps",
+        "connection_isp":   "comcast",
+        "IgnoreHopsCnt":    3
+    },
+    "local": {
+        "output_debug":     true,
+        "timezone":         "America/New_York",
+        "proxy":            false,
+        "proxy_username":   "",
+        "proxy_passwd":     "",
+        "proxy_url":        "",
+        "proxy_port":       "",
+        "updates_url":      "",
+        "update_frequency": 5,
+        "log_to_file":      true,        
+        "log_file":         "/var/log/path_checker.txt",
+        "log_file_errors":  "/var/log/path_checker.txt"        
+    },
+    "email": {
+        "enabled":  false,
+        "server":   "mailrelay.server.com",
+        "port":     465,
+        "auth":     false,
+        "username": "",
+        "passwd":   "",
+        "from":     "ddos_info_sharing_1@company.com"
+    },
+    "email_recipients": [
+        { "to": "admin@carrier.com", "name": "John Smith", "cc":"", "bcc": "", "send_info": false, "send_errors": true },
+        { "to": "admin@carrier.com", "name": "Jane Doe", "cc":"", "bcc": "", "send_info": false, "send_errors": false }
+    ],
+    "remote": [ 
+        { "url": "api.magnetoai.com", "label": "api", "format": "json", "timeout": 120, "extra": "", "proto": "tcp" }
+    ],
+    "geo": {
+        "update_frequency":    30,
+        "files_path":          "libraries/maxmind/",
+        "update_url":          "http://dev.maxmind.com/geoip/legacy/geolite/"
+    },
+    "mqtt": {
+        "remote_url":          "http://api.magnetoai.com/"
+        "port":                58883,
+        "user":                "admin",
+        "password":            "<PASSWORD>",
+        "tags":                "",
+        "SSL_cipher":          "",
+        "crtFile":             "",
+        "keyFile":             ""
+    }
+}
