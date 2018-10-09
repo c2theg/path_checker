@@ -45,12 +45,13 @@
         "files_path":          "libraries/maxmind/",
         "update_url":          "http://dev.maxmind.com/geoip/legacy/geolite/"
     },
-    "mqtt": {
+    "notifier": {
         "remote_url":          "https://api.magnetoai.com",
+        "server_type":         "mqtt",
         "port":                58883,
-        "user":                "admin",
-        "password":            "<PASSWORD>",
-        "tags":                "",
+        "user":                "<admin user>",
+        "password":            "<password>",
+        "tags":                "everyone,something else",
         "SSL_cipher":          "",
         "crtFile":             "",
         "keyFile":             ""
