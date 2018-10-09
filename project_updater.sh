@@ -21,7 +21,7 @@ Current working dir: $SCRIPTPATH \r\n \r\n
                             |_|                                             |___|
 
 Source: https://github.com/c2theg/path_checker/tree/master
-Version:  0.0.3                             \r\n
+Version:  0.0.4                             \r\n
 Last Updated:  10/8/2018
 \r\n \r\n"
 #sudo -E apt-get update
