@@ -31,7 +31,7 @@
         "auth":     false,
         "username": "",
         "passwd":   "",
-        "from":     "ddos_info_sharing_1@company.com"
+        "from":     "latency_tester1@company.com"
     },
     "email_recipients": [
         { "to": "admin@carrier.com", "name": "John Smith", "cc":"", "bcc": "", "send_info": false, "send_errors": true },
@@ -46,7 +46,7 @@
         "update_url":          "http://dev.maxmind.com/geoip/legacy/geolite/"
     },
     "mqtt": {
-        "remote_url":          "http://api.magnetoai.com/"
+        "remote_url":          "https://api.magnetoai.com",
         "port":                58883,
         "user":                "admin",
         "password":            "<PASSWORD>",
